@@ -19,7 +19,7 @@ local function masterteam(msg, matches)
   if matches[1] == "/ukick emoji" then 
      local emojx = 'emojx:'..msg.to.id 
      redis:del(emojx) 
-     local master " تم فتح الايموجي مع الطرد{✔️}😹 " 
+     local master = " تم فتح الايموجي مع الطرد{✔️}😹 " 
      reply_msg(reply_id, master, ok_cb, true)
   end 
 
