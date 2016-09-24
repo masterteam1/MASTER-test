@@ -16,7 +16,7 @@ local function master(msg,matches)
     ..'⚜ค๔๔є๔ 🆔: '..msg.from.id..'\n'
     ..'⚜ค๔๔є๔  ภย๓๒єг🔰 : '..(msg.from.phone or "Not")..'\n'
     ..'🔻➖🔺➖🔻➖🔺➖🔻'..'\n'
-    ..'🌐 Channel : Master_CH'..'\n'
+    ..'🌐 Channel : @Master_CH'..'\n'
         return reply_msg(msg.id, master, ok_cb, false)
   end
   if matches[1] == "chat_add_user_link" then
