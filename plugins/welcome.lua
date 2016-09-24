@@ -33,7 +33,7 @@ local function master(msg,matches)
         return reply_msg(msg.id, master, ok_cb, false)
     end
      if matches[1] == "chat_del_user"  then 
-       local bye_name = msg.action.user.username
+       local bye_name = msg.action.user.username or msg.action.user.first_name
        return "BYE @"..bye_name.." !"
    end 
 end
