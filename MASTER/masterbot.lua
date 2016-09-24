@@ -212,12 +212,11 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"addbot",
+    "addbot",
     "addplugin",
     "admin",
     "all",
     "anti_spam",
-    "antibot",
     "arabic_lock",
     "autoreply",
     "badword",
@@ -225,7 +224,6 @@ function create_config( )
     "banhelp",
     "botphone",
     "broadcast",
-    "bye",
     "converter",
     "date",
     "delenum",
@@ -259,7 +257,6 @@ function create_config( )
     "leave_ban",
     "linkpv",
     "lock_english",
-    "lock_username",
     "lockemoji",
     "lockemoji1",
     "lockfosh",
@@ -286,12 +283,8 @@ function create_config( )
     "sendfile",
     "serverinfo",
     "set",
-    "set_type",
-    "setbye",
-    "setwlc",
     "shortlink",
     "silent",
-    "spid",
     "spinfo",
     "stats",
     "supergroup",
@@ -311,6 +304,10 @@ function create_config( )
     "wlinks",
     "wmedia",
     "wphoto",
+    "rerun",
+    "setexp",
+    "support",
+    "welcome",
     "wvideo"
     },
     sudo_users = {53300935,0,tonumber(our_id)},--Sudo users
