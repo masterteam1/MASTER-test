@@ -277,7 +277,6 @@ function create_config( )
     "owners",
     "plugins",
     "radio",
-    "re",
     "reply",
     "screenshot",
     "sendfile",
