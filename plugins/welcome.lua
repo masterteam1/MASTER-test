@@ -34,7 +34,7 @@ local function master(msg,matches)
     end
      if matches[1] == "chat_del_user"  then 
        local bye_name = msg.action.user.username
-       return "BYE @"..bye_name 
+       return "BYE @"..bye_name.." !"
    end 
 end
 return {
