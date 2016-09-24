@@ -18,7 +18,7 @@ return {
   "^(هاي)"
  
  }, 
- run = vipteam 
+ run = master 
  } 
 end 
 --MASTER TEAM -_-
