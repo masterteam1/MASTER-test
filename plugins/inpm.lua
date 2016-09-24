@@ -256,7 +256,7 @@ return {
     "^[#!/](chats)$",
     "^[#!/](chatlist)$",
     "^[#!/](join) (%d+)$",
-	"^[#!/](join) (.*) (support)$",
+	"^[#!/](join) (.*) (su)$",
 	"^[#!/](join) (.*) (ماستر)$",
     "^[#!/](kkme) (.*)$",
     "^!!tgservice (chat_add_user)$",
