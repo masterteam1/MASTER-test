@@ -926,7 +926,7 @@ end
 local function promote_admin(receiver, member_username, user_id) 
   local data = load_data(_config.moderation.data) 
   local group = string.gsub(receiver, 'channel#id', '') 
-  local member_tag_username = string.gsub(member_username, '@', '(at)') 
+  local member_tag_username = string.gsub(member_username, '@', '@') 
   if not data[group] then 
     return 
   end 
@@ -953,7 +953,7 @@ end
 local function promote2(receiver, member_username, user_id) 
   local data = load_data(_config.moderation.data) 
   local group = string.gsub(receiver, 'channel#id', '') 
-  local member_tag_username = string.gsub(member_username, '@', '(at)') 
+  local member_tag_username = string.gsub(member_username, '@', '@') 
   if not data[group] then 
     return send_large_msg(receiver, 'SuperGroup is not added.') 
   end 
@@ -1219,7 +1219,7 @@ local function callbackres(extra, success, result)
       local channel = 'channel#id'..extra.channelid 
       send_large_msg(channel, user) 
       return user 
-  elseif get_cmd == "invite" then 
+  elseif get_cmd == "inv" then 
     local receiver = extra.channel 
     local user_id = "user#id"..result.peer_id 
     channel_invite(receiver, user_id, ok_cb, false) 
@@ -1537,7 +1537,7 @@ local function master(msg, matches)
          return "SuperGroup owner is👿 ["..group_owner..']' 
       end 
 
-      if matches[1] == "modlist" then 
+      if matches[1] == "modlist" and is_momod(msg) then 
          savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group modlist") 
          return modlist(msg) 
          -- channel_get_admins(receiver,callback, {receiver = receiver}) 
@@ -1687,10 +1687,10 @@ local function master(msg, matches)
          return "link Group ["..msg.to.title.."] :\n"..group_link 
       end 
 
-      if matches[1] == "invite" and is_sudo(msg) then 
+      if matches[1] == "inv" and is_sudo(msg) then 
          local cbres_extra = { 
             channel = get_receiver(msg), 
-            get_cmd = "invite" 
+            get_cmd = "inv" 
          } 
          local username = matches[2] 
          local username = username:gsub("@","") 
@@ -1955,7 +1955,7 @@ local function master(msg, matches)
          if not is_momod(msg) then 
             return "Only owner can clean" 
          end 
-         if matches[2] == 'modlist' then 
+         if matches[2] == 'modlist' and is_momod(msg) then
             if next(data[tostring(msg.to.id)]['moderators']) == nil then 
                return 'No moderator(s) in this SuperGroup.' 
             end 
