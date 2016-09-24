@@ -33,7 +33,7 @@ if is_momod(msg) and matches[1]== 'home' then
 ✇rules : القوانينَ مجموعه
 ✇seteules : لوضع قوانين مجموعه
 ✇setabout : وضع وصف للمجموعه
-✇own : لمعرفه منشئ
+✇owner : لمعرفه منشئ
 ✇gbots : لاضهار بوتات مجموعه
 ✇who : لاضهار اعضاء
 ✇music <لجلب اغاني اجنبية: <اسم
