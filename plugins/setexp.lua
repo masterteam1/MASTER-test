@@ -83,7 +83,7 @@ local time = os.time()
 local buytime = tonumber(os.time())
 local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 redis:hset('expiretime',get_receiver(msg),timeexpire)
-return "🙂 تم وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. ") "
+return "🙂 تم وضع مدة انتهاء صلاحية الكروب الى  ("..matches[2].. " يوم) "
 end
 if matches[1]:lower() == 'exp' then
 local expiretime = redis:hget ('expiretime', get_receiver(msg))
