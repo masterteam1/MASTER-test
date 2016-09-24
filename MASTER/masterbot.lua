@@ -236,7 +236,6 @@ function create_config( )
     "hsudo",
     "ingroup",
     "inpm",
-    "inpv",
     "inrealm",
     "invite",
     "kickaudio",
