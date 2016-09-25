@@ -10,7 +10,7 @@ do
 local function masterteam(msg,matches) 
 
 local reply_id = msg['id'] 
-if is_momod(msg) and matches[1]== 'home' then 
+if is_momod(msg) and matches[1]== 'master' then 
   local master = [[‏          💠 MASTER 💠
    🌐 قائمة الاوامر الرئيسيه 🌐
 🔸➖🔸➖🔸➖🔸➖🔸
@@ -71,7 +71,7 @@ end
 end 
 return { 
 patterns ={ 
-  "^[!#/](home)$", 
+  "^[!#/](master)$", 
 }, 
 run = masterteam
 } 
