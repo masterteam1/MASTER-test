@@ -71,9 +71,9 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 	-For GBan Log
 
 	1. Create a group using the `!creategroup` command.
-	2. Add two members or bots, then use `#super` to convert to a SuperSroup.
-	3.and use `#modadd` to add groups to lists 
-    4. Use the `#addlog` command and your ***LOG SuperGroup(s)*** will be set.
+	2. Add two members or bots, then use `!to super` to convert to a SuperSroup.
+	3.and use `!add` to add groups to lists 
+    4. Use the `!addlog` command and your ***LOG SuperGroup(s)*** will be set.
 	# Note: you can set multiple Log SuperGroups
 
 
