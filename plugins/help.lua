@@ -39,7 +39,7 @@ end
 
 local reply_id = msg['id'] 
 if not is_momod(msg) then 
-local master = "فَقًطِ لُلُمٌشِرَفَيَنَ ْعزُيَزُي!َ" 
+local master = "" 
 reply_msg(reply_id, master, ok_cb, false) 
 end 
 
