@@ -1637,7 +1637,7 @@ local function master(msg, matches)
          end 
       end 
 
-      if matches[1] == 'kkme' then 
+      if matches[1] == 'kickme' then 
          if msg.to.type == 'channel' then 
             savelog(msg.to.id, name_log.." ["..msg.from.id.."] left via kickme") 
             channel_kick("channel#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false) 
@@ -2536,7 +2536,7 @@ return {
    "^[#!/]([Tt]osuper)$", 
    "^[#!/]([Ii][Dd])$", 
    "^[#!/]([Ii][Dd]) (.*)$", 
-   "^[#!/]([Kk]kme)$", 
+   "^[#!/]([Kk]ickme)$", 
    "^[#!/]([Nn]link)$", 
    "^[#!/]([Ss]link)$", 
    "^[#!/]([Ll]ink)$", 
