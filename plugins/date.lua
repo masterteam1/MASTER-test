@@ -18,7 +18,7 @@ end
 
 return {
 patterns = {
-"[!/](date)"
+"[!/](date)$"
 },
 run = master,
 }
