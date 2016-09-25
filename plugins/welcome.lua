@@ -1,8 +1,23 @@
+--" ╭━╮╭━╮╱╱╱╱╱╭╮               "
+--" ┃┃╰╯┃┃╱╱╱╱╭╯╰╮              "      
+--" ┃╭╮╭╮┣━━┳━┻╮╭╋━━┳━╮           "
+--" ┃┃┃┃┃┃╭╮┃━━┫┃┃┃━┫╭┫           "
+--" ┃┃┃┃┃┃╭╮┣━━┃╰┫┃━┫┃             "
+--" ╰╯╰╯╰┻╯╰┻━━┻━┻━━┻╯             "
+
 do
     
 local function master(msg,matches)
-    if matches[1] == "chat_add_user"  then 
-     local master = 'Welcome 😊👋 in the group👥🔕'..'\n'..'\n'
+    local data = load_data(_config.moderation.data)
+    if data[tostring(msg.to.id)] then
+        if data[tostring(msg.to.id)]['settings'] then
+            if data[tostring(msg.to.id)]['settings']['lock_tgservice'] then
+                group_tgservice_lock = data[tostring(msg.to.id)]['settings']['lock_tgservice']
+            end
+        end
+    end
+    if matches[1] == "chat_add_user" and group_tgservice_lock == 'no'  then
+        local master = 'Welcome 😊👋 in the group👥🔕'..'\n'..'\n'
     ..'⚜ψøuƦ ภค๓є🔰: :  '..msg.action.user.first_name..'\n'
     ..'⚜ψøuƦ  ยรєгภค๓є🔰:: @'..(msg.action.user.username or "Not")..'\n'
     ..'⚜ψøuƦ 🆔  : '..msg.action.user.id..'\n'
@@ -19,7 +34,7 @@ local function master(msg,matches)
     ..'🌐 Channel : @Master_CH'..'\n'
         return reply_msg(msg.id, master, ok_cb, false)
   end
-  if matches[1] == "chat_add_user_link" then
+  if matches[1] == "chat_add_user_link" and group_tgservice_lock == 'no' then
       local master =  'Welcome 😊👋 in the group👥🔕'..'\n'..'\n'
     ..'⚜ψøuƦ ภค๓є🔰:   '..msg.action.user.first_name..'\n'
     ..'⚜ψøuƦ  ยรєгภค๓є🔰: @'..(msg.action.user.username or "Not")..'\n'
@@ -32,7 +47,7 @@ local function master(msg,matches)
     ..'🌐 Channel : @Master_CH'..'\n'
         return reply_msg(msg.id, master, ok_cb, false)
     end
-     if matches[1] == "chat_del_user"  then 
+     if matches[1] == "chat_del_user" and group_tgservice_lock == 'no'  then 
        local bye_name = msg.action.user.username or msg.action.user.first_name
        return "BYE @"..bye_name.." !"
    end 
