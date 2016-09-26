@@ -28,7 +28,7 @@ local master = msg['id']
     if matches[1] == 'wr media'  and is_momod(msg) then 
                     local oscar = 'mate:'..msg.to.id 
                     redis:set(oscar, true) 
-                    local text = ' تم كتم جميع الوسائط مع تحدير🔕 ' 
+                    local text = ' تم كتم جميع الوسائط مع تحذير🔕 ' 
 reply_msg(master, text, ok_cb, true) 
 elseif matches[1] == 'wr media' and not is_momod(msg) then 
 local text = 'للمشرفين فقط🔴' 
@@ -37,7 +37,7 @@ reply_msg(master, text, ok_cb, true)
     elseif matches[1] == 'uwr media'  and is_momod(msg) then 
       local oscar = 'mate:'..msg.to.id 
       redis:del(oscar) 
-    local text = ' تم الغاء كتم الوسائط مع تحدير🔔' 
+    local text = ' تم الغاء كتم الوسائط مع تحذير🔔' 
 reply_msg(master, text, ok_cb, true) 
 elseif matches[1] == 'uwr media' and not is_momod(msg) then 
 local text = 'للمشرفين فقط🔴' 
