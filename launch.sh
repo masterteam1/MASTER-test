@@ -42,6 +42,7 @@ else
     echo "Run $0 install"
     exit 1
   fi
+  sudo service redis-server start
   rm -r ../.telegram-cli/state #Prevent tg from crash
   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./MASTER/masterbot.lua -l 1 -E $@
 fi
